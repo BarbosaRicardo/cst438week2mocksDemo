@@ -68,6 +68,8 @@ public class MultiplyServiceTest {
 		// verify that "true" was returned.
 		assertEquals(new MultiplyProblem(28, 81, 2268, true), actualResult);
 		
+		// verify the stub was called 2 times.
+		verify(mockGenerator, times(2)).nextInt(90);
 		// verify that the stub was called 1 time.  The input is not checked.
 		verify(mockChecker, times(1)).check(ArgumentMatchers.any(MultiplyProblem.class));
 		
